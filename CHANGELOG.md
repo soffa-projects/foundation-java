@@ -1,3 +1,29 @@
+## 2.0.3 (DEC 05, 2025)
+
+* Make it possible to configure cors :
+```
+app.cors:
+  allow-credentials: true|false
+  allowed-origins:
+    - "http://someurl"
+  allowed-origin-patterns:
+    - "http://*.someurl"
+  allowed-methods:
+    - "GET"
+    - "POST"
+    - "PUT"
+    - "DELETE"
+    - "PATCH"
+    - "OPTIONS"
+  allowed-headers:
+    - "*"
+  exposed-headers:
+    - "*"
+  max-age: 3600
+```
+
+* update transitive dependencies to address CVEs
+
 ## 1.11.0 (Feb 01, 2024)  
 
 * Make it possible to disable migrations (DB_MIGRATION_DISABLED)

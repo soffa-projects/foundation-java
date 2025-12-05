@@ -1,0 +1,57 @@
+{
+    "groups": [
+        {
+            "name": "app.cors",
+            "type": "io.soffa.foundation.service.core.config.model.AppCorsProperties",
+            "sourceType": "io.soffa.foundation.service.core.config.model.AppCorsProperties"
+        }
+    ],
+    "properties": [
+        {
+            "name": "app.cors.allowed-origins",
+            "type": "java.util.List",
+            "description": "Exact origins to allow (e.g. https://app.example.com)."
+        },
+        {
+            "name": "app.cors.allowed-origin-patterns",
+            "type": "java.util.List",
+            "description": "Origin patterns to allow (e.g. https://*.example.com).",
+            "defaultValue": [
+                "*"
+            ]
+        },
+        {
+            "name": "app.cors.allowed-methods",
+            "type": "java.util.List",
+            "description": "HTTP methods to allow (GET, POST, PUT, DELETE, ...).",
+            "defaultValue": [
+                "*"
+            ]
+        },
+        {
+            "name": "app.cors.allowed-headers",
+            "type": "java.util.List",
+            "description": "Headers that can be used during the actual request.",
+            "defaultValue": [
+                "*"
+            ]
+        },
+        {
+            "name": "app.cors.exposed-headers",
+            "type": "java.util.List",
+            "description": "Headers that are safe to expose to the client."
+        },
+        {
+            "name": "app.cors.allow-credentials",
+            "type": "java.lang.Boolean",
+            "description": "Whether user credentials are supported.",
+            "defaultValue": true
+        },
+        {
+            "name": "app.cors.max-age",
+            "type": "java.lang.Long",
+            "description": "How long, in seconds, the response from a pre-flight request can be cached.",
+            "defaultValue": 3600
+        }
+    ]
+}
