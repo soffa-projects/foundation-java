@@ -21,8 +21,9 @@ jobs:
         with:
           java-version: '17'
           distribution: 'adopt'
+      - run: chmod +x ./gradlew
       - name: Run tests
-        run: NO_PUBLISH=true gradle test
+        run: NO_PUBLISH=true ./gradlew test
 
 #  qa:
 #    runs-on: ubuntu-latest
@@ -48,10 +49,11 @@ jobs:
         with:
           java-version: '17'
           distribution: 'adopt'
+      - run: chmod +x ./gradlew
       - name: Publish artifact to public Sonatype Nexus
         run: |
           echo $SONATYPE_GPG | base64 -d > $HOME/.sonatype-keys.gpg
-          gradle sign -x check publishMavenPublicationToSonatypeRepository closeAndReleaseSonatypeStagingRepository -Psonatype=true \
+          ./gradlew sign -x check publishMavenPublicationToSonatypeRepository closeAndReleaseSonatypeStagingRepository -Psonatype=true \
             -PossrhUsername=$SONATYPE_USERNAME \
             -PossrhPassword=$SONATYPE_PASSWORD \
             -Psigning.keyId=$SIGNING_KEYID  \
